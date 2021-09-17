@@ -1,6 +1,10 @@
 import express from "express";
+import morgan from "morgan";
+
+const PORT = 4000;
 
 const app = express();
-
-app.listen(process.env.PORT, () => `Listening!✅`);
+const logger = morgan("dev");
+app.use(logger);
+app.listen(PORT, () => `Listening!✅`);
 
